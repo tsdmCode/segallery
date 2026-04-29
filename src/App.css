@@ -9,3 +9,8 @@
     color: #ebebeb;
     background-color: #010101;
 }
+
+body {
+    padding: 0;
+    margin: 0;
+}
