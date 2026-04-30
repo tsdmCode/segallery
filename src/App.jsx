@@ -13,7 +13,6 @@ const contentfulClient = createClient({
     : 'cdn.contentful.com',
 });
 
-
 function App() {
   const [data, setData] = useState(null);
   const [headerData, setHeaderData] = useState(null);
@@ -22,8 +21,6 @@ function App() {
   useEffect(() => {
     async function fetchAllData() {
       try {
-        console.log('Fetching from Contentful...');
-        console.log('Space ID:', import.meta.env.VITE_PUBLIC_SPACE_ID);
         
         const [entries, header] = await Promise.all([
           contentfulClient.getEntries({ content_type: 'galleryPost' }),
@@ -56,6 +53,7 @@ function App() {
         <GalleryPostCard key={entry.sys.id} entry={entry} />
       ))}
       </Grid>
+      <footer>Lavet af TROELS</footer>
     </>
   );
 }
